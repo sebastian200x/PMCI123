@@ -1,0 +1,176 @@
+.news-container {
+
+    margin-inline: 40px;
+
+    display: flex;
+    flex-wrap: wrap;
+    
+
+
+
+}
+
+main {
+
+    min-height: 80dvh;
+}
+
+.head {
+    font-size: 70PX;
+    width: 100%;
+
+    text-align: center;
+
+}
+
+
+.news {
+
+    width: 100%;
+    
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+
+}
+
+.news-img {
+
+    width: 29%;
+    margin-block: 30px;
+    
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
+
+}
+
+.img {
+
+    width: 500px;
+    height: 500px;
+
+    box-shadow:
+    4.5px 4.5px 3.6px rgba(0, 0, 0, 0.024),
+    12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+    30.1px 30.1px 24.1px rgba(0, 0, 0, 0.046),
+    100px 100px 80px rgba(0, 0, 0, 0.07)
+  ;
+}
+
+.img img {
+
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+}
+
+.news-img img {
+
+    width: 100%;
+}
+
+.details {
+
+    width: 69%;
+    margin-block: 30px;
+}
+
+.details h1 {
+    text-transform: uppercase; 
+
+    font-size: 40px;
+    color: #006828;
+}
+
+.details p {
+
+    font-size: 20px;
+    padding: 10PX;
+    border: SOLID 1PX;
+    text-align: justify;
+}
+
+.container {
+
+    display: flex;
+    flex-wrap: wrap;
+   
+    justify-content: flex-end;
+    width: 100%;
+
+    margin-block: 10px;
+}
+
+.search button {
+
+    padding: 8px 15px;
+    cursor: pointer;
+
+    
+    
+}
+
+.active2 {
+    background-color: #006828;
+    color: white;
+
+    border: 2px solid #006828;
+    outline: none;
+}
+
+@media screen and (max-width: 950px) {
+    .news-container {
+
+        margin-inline: 10px;
+    }
+
+    .news-img {
+
+        width: 75%;
+
+        margin-block: 0;
+    }
+
+    .news {
+
+        justify-content: center;
+    }
+
+    .details h1 {
+
+        font-size: 30px;
+    }
+
+    .details h3 {
+
+        font-size: 17px;
+    }
+
+    .details {
+
+        width: 90%;
+    }
+
+    .details p {
+
+        font-size: 15px;
+    }
+
+
+
+}
+
+@media screen and (max-width: 950px) {
+
+    .img {
+
+        height: 300PX;
+        width: 300PX;
+       
+    }
+}
+
