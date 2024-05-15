@@ -28,6 +28,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
             <div id="sidebar" class="sidebar">
                 <a href="#" class="closebtn" onclick="closeSidebar()">&times;</a>
                 <a href="./index.php">HOME</a>
+                <a href="./enrollment.php">ENROLLMENT</a>
                 <a href="./k12.php">K-12 UNIFORM</a>
                 <a href="./facilities.php">FACILITIES</a>
                 <a href="./policies.php">SUBJECTS</a>
@@ -44,7 +45,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
         <div class="nav-container">
             <div class="img-logo">
                 <img src="./styles/images/PMCI-LOGO.png" alt="">
-                <span>&nbsp菲律賓馬拉邦文化學院</span>
+                <span>&nbsp菲律濱嗎拉汶文化書院</span>
             </div>
             <div class="navi">
                 <a class="hover <?php echo ($currentPage == 'index.php') ? 'active' : ''; ?>"

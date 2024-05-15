@@ -59,6 +59,8 @@ input[type=date] {
     flex-wrap: wrap;
     height: 400px;
     justify-content: center;
+
+    
 }
 
 .form {
@@ -196,8 +198,10 @@ label {
 
 .img {
 
-    width: 350px;
-    height: 350px;
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
 }
 
 .img img {
@@ -329,4 +333,37 @@ textarea {
 
 #myForm button:hover {
     background-color: #45a049;
+}
+
+@media screen and (max-width: 1440px) {
+
+    .details h1 {
+
+        font-size: 30px;
+    }
+
+    .details p {
+
+        font-size: 16px;
+    }
+
+    .details h3 {
+
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 1024px) {
+
+    .form-container {
+
+        width: 100%;
+        height: auto;
+    }
+    
+    .display {
+
+        width: 100%;
+    }
+
+    
 }

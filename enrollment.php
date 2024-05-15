@@ -155,7 +155,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="level">YEAR LEVEL</label>
-                                <select name="level" id="level" required>
+                                <select class= "wan" name="level" id="level" required>
 
                                     <?php if (!isset($response) || empty($response)) : ?>
                                         <option value="" selected hidden>Choose Year Level</option>
@@ -183,7 +183,7 @@
                             </div>
                             <div class="col">
                                 <label for="school">SCHOOL NAME (If Transfer)</label>
-                                <input type="text" name="school" id="school" placeholder="School Name (If transferee)" value="<?php echo isset($_POST['school']) ? htmlspecialchars($_POST['school']) : ''; ?>">
+                                <input type="text" class= "wan" name="school" id="school" placeholder="School Name (If transferee)" value="<?php echo isset($_POST['school']) ? htmlspecialchars($_POST['school']) : ''; ?>">
                             </div>
                         </div>
                     </div>
@@ -192,15 +192,15 @@
                         <div class="row">
                             <div class="col">
                                 <label for="sy">SCHOOL YEAR (If Transfer)</label>
-                                <input type="text" name="sy" id="sy" placeholder="eg. 2020-2021" pattern="\d{4}-\d{4}" title="Enter a valid school year in the format YYYY-YYYY" value="<?php echo isset($_POST['sy']) ? htmlspecialchars($_POST['sy']) : ''; ?>" maxlength="9" minlength="9" oninput="autoFillSchoolYear(this)">
+                                <input type="text" class= "wan" name="sy" id="sy" placeholder="eg. 2020-2021" pattern="\d{4}-\d{4}" title="Enter a valid school year in the format YYYY-YYYY" value="<?php echo isset($_POST['sy']) ? htmlspecialchars($_POST['sy']) : ''; ?>" maxlength="9" minlength="9" oninput="autoFillSchoolYear(this)">
 
                             </div>
                             <div class="col">
                                 <label for="referral">REFERRAL NAME</label>
-                                <input type="text" name="referral" id="referral" placeholder="Referral Name" value="<?php echo @$_POST['referral']; ?>" onchange="toggleSchoolYearRequired()">
+                                <input type="text" class= "wan" name="referral" id="referral" placeholder="Referral Name" value="<?php echo @$_POST['referral']; ?>" onchange="toggleSchoolYearRequired()">
                             </div>
                         </div>
-                    </div>
+                    </div><br>
 
                     <h1 class="h1">REQUIREMENTS</h1>
                     <div class="req">

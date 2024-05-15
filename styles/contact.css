@@ -27,13 +27,20 @@ main {}
 
 .map {
 
-    width: 100%;
+    margin-inline: 20px;
+
+    
 
 }
 
 .map img {
 
-    border: 2px solid black;
+    
+    width: 90%;
+
+
+
+    
 }
 
 .link {
@@ -93,5 +100,46 @@ main {}
 
 .data {
 
-    padding: 60px;
+    padding-inline: 40px;
+    padding-block: 15px;
+}
+
+
+@media screen and (max-width: 450px) {
+
+    .map img {
+
+        
+        width: 100%;
+ 
+  object-fit: cover;
+    
+        
+    }
+
+    .card {
+
+        width: 90%;
+
+    }
+
+    .socials {
+
+        width: 90%;
+    }
+
+
+}
+
+@media screen and (max-width: 450px) {
+
+    .data {
+
+        padding-inline: 10px;
+    }
+
+    .link {
+
+        font-size: 15px;
+    }
 }

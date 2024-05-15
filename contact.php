@@ -9,9 +9,9 @@
     <title>CONTACT US</title>
 </head>
 
-<?php include 'header.php'; ?>
-<body>
 
+<body>
+<?php include 'header.php'; ?>
 
     <main>
         <div class="heading">
@@ -53,10 +53,11 @@
                 <H2>SOCIALS</H2>
 
                 <div class="data">
-                <a href=""><h3><i class="fa-brands fa-facebook"></i> FACEBOOK</h3></a>
-                <a href=""><h3><i class="fa-brands fa-instagram"></i>  INSTAGRAM</h3></a>
-                <a href=""><H3><i class="fa-brands fa-facebook-messenger"></i>  MESSENGER</H3></a>
-                    
+                <a href="https://www.facebook.com/PMCI1958" target="_blank"><h3><i class="fa-brands fa-facebook"></i> FACEBOOK</h3></a>
+                <a href="https://www.instagram.com/pmci_ig58/"target="_blank"><h3><i class="fa-brands fa-instagram"></i>  INSTAGRAM</h3></a>
+                <a href="https://www.facebook.com/PMCI1958" target="_blank"><H3><i class="fa-brands fa-facebook-messenger"></i>  MESSENGER</H3></a>
+                <a href="https://www.tiktok.com/@pmci_tiktok58" target="_blank"><h3><i class="fa-brands fa-tiktok"></i> TIKTOK</h3></a>
+                <a href="https://www.youtube.com/@pmci_ytc58" target="_blank"><h3><i class="fa-brands fa-youtube"></i></i> YOUTUBE</h3></a>
 
                     
 

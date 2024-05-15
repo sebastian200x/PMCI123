@@ -2,7 +2,9 @@
 <link rel="icon" href="./styles/favicon.ico" type="image/x-icon">
 
 <header>
-    <h2>PHILIPPINE MALABON CULTURAL INSTITUTE</h2>
+    <h2 class="big">PHILIPPINE MALABON CULTURAL INSTITUTE</h2>
+
+    <h2 class="small">菲律濱嗎拉汶文化書院</h2>
 
     <div class="set">
         <form action="" method="POST">

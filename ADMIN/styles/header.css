@@ -51,3 +51,27 @@ header a{
     padding-inline: 20px;
     padding-block: 10px;
 }
+
+.small {
+
+    display: none;
+
+    letter-spacing: 5px;
+}
+
+
+
+@media screen and (max-width: 1100px){
+
+    .big {
+
+        display: none;
+    }
+
+    .small {
+
+        display: block;
+    }
+}
+
+

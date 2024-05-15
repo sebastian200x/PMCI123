@@ -174,3 +174,73 @@ main {
     }
 }
 
+@media screen and (max-width: 500px) { 
+
+    
+    
+    .search button {
+    
+        padding: 4px 7px;
+        cursor: pointer;
+    
+        
+        
+    }
+
+    
+
+}
+
+@media screen and (max-width: 380px) { 
+
+    
+    .container {
+
+        display: flex;
+        flex-wrap: wrap;
+       
+        justify-content: center;
+        
+        width: 100%;
+    
+        
+    }
+
+    .search {
+
+        display: flex;
+        flex-wrap: wrap;
+       
+        justify-content: center;
+        
+        margin-bottom: 10px ;
+        
+    }
+
+    .search button {
+
+        padding: 4px 7px;
+        margin-bottom: 10px;
+
+        margin-inline: 5px;
+    }
+
+    .details h1 {
+
+        font-size: 25px;
+    }
+
+    .details h3 {
+
+        font-size: 15px;
+    }
+
+    .head {
+
+        font-size: 55px;
+    }
+    
+    
+
+}
+
