@@ -50,7 +50,8 @@ td {
     width: 100%;
 }
 
-.buttonz input, button {
+.buttonz input,
+button {
     margin: 10px;
     background-color: #006828;
     padding: 12px 20px;

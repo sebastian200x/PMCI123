@@ -281,6 +281,43 @@ function logout()
 	exit();
 }
 
+function pending_enrollment_grade($grade)
+{
+	// Establish a database connection.
+	$mysqli = connect();
+
+	// If there's an error in the database, the program will stop the function
+	if (!$mysqli) {
+		return false;
+	}
+
+	$stmt = $mysqli->prepare("SELECT COUNT(*) AS count FROM `enrollment` WHERE level = ?");
+	$stmt->bind_param("s", $grade);
+	$stmt->execute();
+	$result = $stmt->get_result();
+	$row = $result->fetch_assoc();
+	$count = $row['count'];
+	return $count;
+
+}
+
+function pending_enrollment()
+{
+	// Establish a database connection.
+	$mysqli = connect();
+
+	// If there's an error in the database, the program will stop the function
+	if (!$mysqli) {
+		return false;
+	}
+
+	$sql = "SELECT COUNT(*) AS count FROM `enrollment`";
+	$result = $mysqli->query($sql);
+	$row = $result->fetch_assoc();
+	$count = $row['count'];
+	return $count;
+}
+
 
 function uploadnews($file, $title, $description, $date)
 {
@@ -347,18 +384,33 @@ function uploadnews($file, $title, $description, $date)
 	}
 }
 
-function getnews()
+function getnews($current_page = 1, $items_per_page = 3)
 {
 	// Establish a database connection.
 	$mysqli = connect();
-	// If there's an error in the database, the program will stop function
+	// If there's an error in database the program will stop function
 	if (!$mysqli) {
 		return false;
 	}
-	$sql = "SELECT * FROM news ORDER BY reg_date ASC";
-	$result = $mysqli->query($sql);
+
+	// Calculate the offset for the SQL query
+	$offset = ($current_page - 1) * $items_per_page;
+
+	// Get the total number of news items
+	$total_items_query = "SELECT COUNT(*) AS count FROM news";
+	$result = $mysqli->query($total_items_query);
+	$total_items = $result->fetch_assoc()['count'];
+
+	// Calculate the total number of pages
+	$total_pages = ceil($total_items / $items_per_page);
+
+	// Fetch the news items for the current page
+	$query = "SELECT * FROM news LIMIT $items_per_page OFFSET $offset";
+	$result = $mysqli->query($query);
+	$news = '';
+
+
 	if ($result->num_rows > 0) {
-		$news = '';
 		while ($row = $result->fetch_assoc()) {
 			$regDate = new DateTime($row['reg_date']);
 			$readabledate = $regDate->format('F j, Y'); // Format the date as desired
@@ -558,11 +610,19 @@ function getnews()
 				}
 			}
 		}
-		return $news;
 	} else {
-		echo "<h1 style='width:100; text-align:center'>No news found.</h1>";
+		$news = "<h1 style='width:100; text-align:center'>No news found.</h1>";
 	}
+	$mysqli->close();
+
+	// Return the news items and pagination data
+	return [
+		'news_items' => $news,
+		'total_pages' => $total_pages,
+		'current_page' => $current_page
+	];
 }
+
 
 function news($current_page = 1, $items_per_page = 5)
 {
@@ -900,7 +960,6 @@ function delholiday($id)
 	$stmt = $mysqli->prepare("DELETE FROM holiday WHERE `holiday`.`id` = ?");
 	$stmt->bind_param("i", $id);
 	$stmt->execute();
-
 
 	// Close the statement and database connection
 	$stmt->close();

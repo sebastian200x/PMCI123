@@ -246,3 +246,17 @@ td {
 
     background-color: #636363;
 }
+
+
+.grade a {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center
+}
+
+.grade a .span2 {
+    background-color: red;
+    padding-inline: 10px;
+    border-radius: 25%;
+}

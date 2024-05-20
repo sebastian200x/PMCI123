@@ -24,21 +24,35 @@
 
         <div class="enroll">
 
+            <?php
+            $grades = [
+                "KINDER 1" => "./kinder1.php",
+                "KINDER 2" => "./kinder2.php",
+                "GRADE 1" => "./grade1.php",
+                "GRADE 2" => "./grade2.php",
+                "GRADE 3" => "./grade3.php",
+                "GRADE 4" => "./grade4.php",
+                "GRADE 5" => "./grade5.php",
+                "GRADE 6" => "./grade6.php",
+                "GRADE 7" => "./grade7.php",
+                "GRADE 8" => "./grade8.php",
+                "GRADE 9" => "./grade9.php",
+                "GRADE 10" => "./grade10.php",
+                "GRADE 11" => "./grade11.php",
+                "GRADE 12" => "./grade12.php"
+            ];
+            ?>
+
             <div class="grade">
-                <a href="./kinder1.php">KINDER 1</a>
-                <a href="./kinder2.php">KINDER 2</a>
-                <a href="#" class="active">GRADE 1</a>
-                <a href="./grade2.php">GRADE 2</a>
-                <a href="./grade3.php">GRADE 3</a>
-                <a href="./grade4.php">GRADE 4</a>
-                <a href="./grade5.php">GRADE 5</a>
-                <a href="./grade6.php">GRADE 6</a>
-                <a href="./grade7.php">GRADE 7</a>
-                <a href="./grade8.php">GRADE 8</a>
-                <a href="./grade9.php">GRADE 9</a>
-                <a href="./grade10.php">GRADE 10</a>
-                <a href="./grade11.php">GRADE 11</a>
-                <a href="./grade12.php">GRADE 12</a>
+                <?php foreach ($grades as $grade => $link): ?>
+                    <a href="<?= $link ?>" <?= $grade === "GRADE 1" ? 'class="active"' : '' ?>><?= $grade ?>
+                        <?php
+                        $pending = pending_enrollment_grade($grade);
+                        if (isset($pending) && $pending > 0): ?>
+                            <span class="span2"><?= $pending ?></span>
+                        <?php endif; ?>
+                    </a>
+                <?php endforeach; ?>
             </div>
 
             <?php echo getenrollment('GRADE 1'); ?>
