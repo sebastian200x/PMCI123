@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="./styles/header.css">
 <link rel="icon" href="./styles/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <header>
     <h2 class="big">PHILIPPINE MALABON CULTURAL INSTITUTE</h2>

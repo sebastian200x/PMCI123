@@ -98,6 +98,17 @@ main {
     outline: none;
 }
 
+.pagination .disabled {
+    color: #ccc;
+    cursor: not-allowed;
+    margin: 0 5px;
+    padding: 10px 15px;
+    text-decoration: none;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+
 .pagination {
     text-align: center;
     margin-top: 20px;

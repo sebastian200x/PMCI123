@@ -6,9 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NEWS</title>
+    <?php include 'header.php'; ?>
 </head>
 
-<?php include 'header.php'; ?>
 
 <body>
 
@@ -26,32 +26,53 @@
 
                 <div class="pagination">
                     <?php
-                    // Calculate the start and end page numbers
-                    $start_page = max(1, $news_data['current_page'] - 1);
-                    $end_page = min($news_data['total_pages'], $news_data['current_page'] + 1);
+                    // Calculate the start and end page numbers to always show 3 pages
+                    $total_pages = $news_data['total_pages'];
+                    $current_page = $news_data['current_page'];
 
-                    // Show left arrow if not on the first page
-                    if ($news_data['current_page'] > 1) {
-                        echo '<a href="?page=' . ($news_data['current_page'] - 1) . '"><i class="fa-solid fa-arrow-left"></i></a>';
+                    if ($total_pages <= 3) {
+                        // If there are 3 or fewer total pages, show all of them
+                        $start_page = 1;
+                        $end_page = $total_pages;
+                    } else {
+                        // Otherwise, determine the start and end pages based on the current page
+                        if ($current_page == 1) {
+                            $start_page = 1;
+                            $end_page = 3;
+                        } elseif ($current_page == $total_pages) {
+                            $start_page = $total_pages - 2;
+                            $end_page = $total_pages;
+                        } else {
+                            $start_page = $current_page - 1;
+                            $end_page = $current_page + 1;
+                        }
+                    }
+
+                    // Show left arrow
+                    if ($current_page > 1) {
+                        echo '<a href="?page=' . ($current_page - 1) . '"><i class="fa-solid fa-arrow-left"></i></a>';
+                    } else {
+                        echo '<span class="disabled"><i class="fa-solid fa-arrow-left"></i></span>';
                     }
 
                     // Display page numbers
                     for ($page = $start_page; $page <= $end_page; $page++) {
                         echo '<a href="?page=' . $page . '"';
-                        if ($page == $news_data['current_page']) {
+                        if ($page == $current_page) {
                             echo ' class="active"';
                         }
                         echo '>' . $page . '</a>';
                     }
 
-                    // Show right arrow if not on the last page
-                    if ($news_data['current_page'] < $news_data['total_pages']) {
-                        echo '<a href="?page=' . ($news_data['current_page'] + 1) . '"><i class="fa-solid fa-arrow-right"></i></a>';
+                    // Show right arrow
+                    if ($current_page < $total_pages) {
+                        echo '<a href="?page=' . ($current_page + 1) . '"><i class="fa-solid fa-arrow-right"></i></a>';
+                    } else {
+                        echo '<span class="disabled"><i class="fa-solid fa-arrow-right"></i></span>';
                     }
                     ?>
                     <input class="fa" style="padding: 10px" type="text" id="searchInput"
                         placeholder=" &#xf002; Search News..." onkeyup="searchNews()">
-
                 </div>
             </div>
 
