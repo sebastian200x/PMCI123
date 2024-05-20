@@ -564,8 +564,7 @@ function getnews()
 	}
 }
 
-
-function news()
+function news($current_page = 1, $items_per_page = 5)
 {
 	// Establish a database connection.
 	$mysqli = connect();
@@ -574,32 +573,54 @@ function news()
 		return false;
 	}
 
-	$sql = "SELECT * FROM news ORDER BY reg_date ASC";
-	$result = $mysqli->query($sql);
+	// Calculate the offset for the SQL query
+	$offset = ($current_page - 1) * $items_per_page;
+
+	// Get the total number of news items
+	$total_items_query = "SELECT COUNT(*) AS count FROM news";
+	$result = $mysqli->query($total_items_query);
+	$total_items = $result->fetch_assoc()['count'];
+
+	// Calculate the total number of pages
+	$total_pages = ceil($total_items / $items_per_page);
+
+	// Fetch the news items for the current page
+	$query = "SELECT * FROM news LIMIT $items_per_page OFFSET $offset";
+	$result = $mysqli->query($query);
+
+	$news_items = '';
 	if ($result->num_rows > 0) {
-		$news = '';
 		while ($row = $result->fetch_assoc()) {
 			$regDate = new DateTime($row['reg_date']);
 			$formattedDate = $regDate->format('F j, Y'); // Format the date as desired
-			$news .= '<div class="news">
-			<div class="news-img">
-			<div class="img">
-			<img src="./ADMIN/' . $row['image_path'] . '" alt="news" draggable="false" >
-			</div>
-			</div>
-			<div class="details">
-			<h1>' . $row['title'] . '</h1>
-			<H3> [' . $formattedDate . '] </H3> <br>
-			<p>' . $row['description'] . '</p>
-			</div>
-			</div>';
+			$news_items .= "<div class='news'>";
+			$news_items .= "<div class='news-img'>";
+			$news_items .= "<div class='img'>";
+			$news_items .= "<img src='./ADMIN/" . $row['image_path'] . "' alt='news' draggable='false' >";
+			$news_items .= "</div>";
+			$news_items .= "</div>";
+
+			$news_items .= "<div class='details'>";
+			$news_items .= "<h1>" . $row['title'] . "</h1>";
+			$news_items .= "<h3>[" . $formattedDate . "]</h3>";
+			$news_items .= "<p>" . $row['description'] . "</p>";
+			$news_items .= "</div>";
+			$news_items .= "</div>";
 		}
-		return $news;
 	} else {
-		echo "<h1> No news found.</h1>";
-		return '';
+		$news_items = "No news items found.";
 	}
+
+	$mysqli->close();
+
+	// Return the news items and pagination data
+	return [
+		'news_items' => $news_items,
+		'total_pages' => $total_pages,
+		'current_page' => $current_page
+	];
 }
+
 function getenrollment($grade)
 {
 	$mysqli = connect();
