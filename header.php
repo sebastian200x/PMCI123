@@ -36,7 +36,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
                 <a href="./news.php">NEWS</a>
                 <a href="./contact.php">CONTACT US</a>
             </div>
-            <h2>PHILIPPINE MALABON CULTURAL INSTITUTE</h2>
+            <h2 class="tet">PHILIPPINE MALABON CULTURAL INSTITUTE</h2>
             <img class="header-logo" src="./styles/images/PMCI-LOGO.png" alt="" draggable="false">
             <a href="./ADMIN/index.php"></a>
         </div>

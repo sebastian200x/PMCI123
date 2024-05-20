@@ -274,12 +274,19 @@
  }
 
 
+ @media screen and (max-width: 1024px) {
 
+    .form-container {
+
+        margin-inline: 17px;
+     }
+ }
 
  @media screen and (max-width: 450px) {
 
-    
-
+    .row-custom {
+    display: block ;
+    }
      .column-custom  {
 
         width: 100%;
@@ -325,7 +332,14 @@
 
     .title {
 
-        font-size: 40px;
+        font-size: 30px;
+
+        margin-inline: 20px;
+    }
+
+    .date label, .time label {
+
+        font-size: 12px;
     }
 
    

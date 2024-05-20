@@ -90,7 +90,7 @@
 
     <main>
 
-        <h1 class="title">ENROLLMENT</h1>
+        <h1 class="title">ENROLLMENT APPOINTMENT</h1>
 
         <div class="form-container">
             <div class="form-flex">

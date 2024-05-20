@@ -52,6 +52,11 @@ header a{
     padding-block: 10px;
 }
 
+.set .button2:hover {
+    background-color: #00461b;
+    color: rgb(255, 56, 56);
+}
+
 .small {
 
     display: none;

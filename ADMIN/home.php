@@ -61,6 +61,18 @@
         </div>
 
         <div class="display">
+
+        <div class="container">
+                <div class="search">
+                    <button>PREV</button>
+                    <button class="active2">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>NEXT</button>
+                    &nbsp;
+                    <input class="fa" style="padding: 10px" type="text" placeholder=" &#xf002; Search News...">
+                </div>
+            </div>
             <div class="news-container">
                 <?php
                 $news = getnews();

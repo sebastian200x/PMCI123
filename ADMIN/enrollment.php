@@ -21,6 +21,10 @@ if (!isset($_SESSION['admin'])) {
 
     <main>
 
+    <div class="pending">
+        <p>Pending Enroll: <span>20</span></p>
+    </div>
+
         <nav>
             <div class="navi">
 

@@ -335,6 +335,26 @@ textarea {
     background-color: #45a049;
 }
 
+.container {
+
+    display: flex;
+    flex-wrap: wrap;
+   
+    justify-content: flex-end;
+    width: 100%;
+
+    margin-block: 10px;
+}
+
+.search button {
+
+    padding: 8px 15px;
+    cursor: pointer;
+
+    
+    
+}
+
 @media screen and (max-width: 1440px) {
 
     .details h1 {

@@ -122,6 +122,19 @@ main {
     outline: none;
 }
 
+@media screen and (max-width: 1024px) {
+
+    .details h1 {
+
+        font-size: 25px;
+    }
+
+    .details p {
+
+        font-size: 15px;
+    }
+}
+
 @media screen and (max-width: 950px) {
     .news-container {
 

@@ -47,6 +47,22 @@ nav {
 
 }
 
+.pending  {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    margin-block: 20px;
+
+    font-size: 20px;
+}
+
+.pending span {
+
+    color: red;
+}
+
 .grade {
 
     width: 15%;
