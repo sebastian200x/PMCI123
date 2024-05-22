@@ -10,16 +10,17 @@
     <title>ENROLLMENT</title>
 
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.theme.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
+    <?php include 'header.php'; ?>
 </head>
 
 <body>
     <?php
-    include 'header.php';
 
     if (isset($_POST['enroll'])) {
 
@@ -102,17 +103,20 @@
                     <div class="row-custom">
                         <div class="column-custom">
                             <label for="firstname" class="label-custom">FIRST NAME:</label>
-                            <input type="text" name="firstname" class="input-custom" id="firstname" placeholder="First Name" value="<?php echo @$_POST['firstname']; ?>" required>
+                            <input type="text" name="firstname" class="input-custom" id="firstname"
+                                placeholder="First Name" value="<?php echo @$_POST['firstname']; ?>" required>
 
                         </div>
                         <div class="column-custom">
                             <label for="middlename" class="label-custom">MIDDLE NAME:</label>
-                            <input type="text" name="middlename" id="middlename" placeholder="Middle Name" value="<?php echo @$_POST['middlename']; ?>" class="input-custom" required>
+                            <input type="text" name="middlename" id="middlename" placeholder="Middle Name"
+                                value="<?php echo @$_POST['middlename']; ?>" class="input-custom" required>
 
                         </div>
                         <div class="column-custom">
                             <label for="lastname" class="label-custom">LAST NAME:</label>
-                            <input type="text" name="lastname" id="lastname" placeholder="Last Name" value="<?php echo @$_POST['lastname']; ?>" class="input-custom" required>
+                            <input type="text" name="lastname" id="lastname" placeholder="Last Name"
+                                value="<?php echo @$_POST['lastname']; ?>" class="input-custom" required>
                         </div>
                     </div>
 
@@ -120,11 +124,14 @@
                         <div class="row">
                             <div class="col">
                                 <label for="bday">BIRTHDAY:</label>
-                                <input type="date" name="bday" id="bday" onchange="calculateAge()" value="<?php echo @$_POST['bday']; ?>" max="<?php echo date('Y-m-d'); ?>" required>
+                                <input type="date" name="bday" id="bday" onchange="calculateAge()"
+                                    value="<?php echo @$_POST['bday']; ?>" max="<?php echo date('Y-m-d'); ?>" required>
                             </div>
                             <div class="col">
                                 <label for="age">AGE:</label>
-                                <input type="text" name="age" id="age" title="Please select birth date" placeholder="Please select birth date" value="<?php echo @$_POST['age']; ?>" readonly><br>
+                                <input type="text" name="age" id="age" title="Please select birth date"
+                                    placeholder="Please select birth date" value="<?php echo @$_POST['age']; ?>"
+                                    readonly><br>
                             </div>
                         </div>
                     </div>
@@ -132,19 +139,25 @@
                     <div class="full">
 
                         <label for="address">ADDRESS</label>
-                        <input type="text" name="address" id="address" placeholder="Home Address" value="<?php echo @$_POST['address']; ?>" required><br>
+                        <input type="text" name="address" id="address" placeholder="Home Address"
+                            value="<?php echo @$_POST['address']; ?>" required><br>
                     </div>
 
                     <div class="half">
                         <div class="row">
                             <div class="col">
                                 <label for="contact">CONTACT NUMBER</label>
-                                <input type="number" id="contact" name="contact" placeholder="Enter phone number" value="<?php echo isset($_POST['contact']) ? htmlspecialchars($_POST['contact']) : '09'; ?>" min="09000000000" max="09999999999" oninput="contactnum(this)" pattern="09\d{9}" title="Please enter a valid phone number starting with 09 followed by 9 digits" required>
+                                <input type="number" id="contact" name="contact" placeholder="Enter phone number"
+                                    value="<?php echo isset($_POST['contact']) ? htmlspecialchars($_POST['contact']) : '09'; ?>"
+                                    min="09000000000" max="09999999999" oninput="contactnum(this)" pattern="09\d{9}"
+                                    title="Please enter a valid phone number starting with 09 followed by 9 digits"
+                                    required>
                             </div>
 
                             <div class="col">
                                 <label for="email">EMAIL</label>
-                                <input type="email" name="email" id="email" placeholder="E-Mail" value="<?php echo @$_POST['email']; ?> " required>
+                                <input type="email" name="email" id="email" placeholder="E-Mail"
+                                    value="<?php echo @$_POST['email']; ?> " required>
                             </div>
                         </div>
                     </div>
@@ -155,11 +168,11 @@
                         <div class="row">
                             <div class="col">
                                 <label for="level">YEAR LEVEL</label>
-                                <select class= "wan" name="level" id="level" required>
+                                <select class="wan" name="level" id="level" required>
 
-                                    <?php if (!isset($response) || empty($response)) : ?>
+                                    <?php if (!isset($response) || empty($response)): ?>
                                         <option value="" selected hidden>Choose Year Level</option>
-                                    <?php else : ?>
+                                    <?php else: ?>
                                         <option value="<?php echo @$_POST['level']; ?>" selected hidden>
                                             <?php echo @$_POST['level']; ?>
                                         </option>
@@ -183,7 +196,9 @@
                             </div>
                             <div class="col">
                                 <label for="school">SCHOOL NAME (If Transfer)</label>
-                                <input type="text" class= "wan" name="school" id="school" placeholder="School Name (If transferee)" value="<?php echo isset($_POST['school']) ? htmlspecialchars($_POST['school']) : ''; ?>">
+                                <input type="text" class="wan" name="school" id="school"
+                                    placeholder="School Name (If transferee)"
+                                    value="<?php echo isset($_POST['school']) ? htmlspecialchars($_POST['school']) : ''; ?>">
                             </div>
                         </div>
                     </div>
@@ -192,12 +207,16 @@
                         <div class="row">
                             <div class="col">
                                 <label for="sy">SCHOOL YEAR (If Transfer)</label>
-                                <input type="text" class= "wan" name="sy" id="sy" placeholder="eg. 2020-2021" pattern="\d{4}-\d{4}" title="Enter a valid school year in the format YYYY-YYYY" value="<?php echo isset($_POST['sy']) ? htmlspecialchars($_POST['sy']) : ''; ?>" maxlength="9" minlength="9" oninput="autoFillSchoolYear(this)">
+                                <input type="text" class="wan" name="sy" id="sy" placeholder="eg. 2020-2021"
+                                    pattern="\d{4}-\d{4}" title="Enter a valid school year in the format YYYY-YYYY"
+                                    value="<?php echo isset($_POST['sy']) ? htmlspecialchars($_POST['sy']) : ''; ?>"
+                                    maxlength="9" minlength="9" oninput="autoFillSchoolYear(this)">
 
                             </div>
                             <div class="col">
                                 <label for="referral">REFERRAL NAME</label>
-                                <input type="text" class= "wan" name="referral" id="referral" placeholder="Referral Name" value="<?php echo @$_POST['referral']; ?>" onchange="toggleSchoolYearRequired()">
+                                <input type="text" class="wan" name="referral" id="referral" placeholder="Referral Name"
+                                    value="<?php echo @$_POST['referral']; ?>" onchange="toggleSchoolYearRequired()">
                             </div>
                         </div>
                     </div><br>
@@ -240,16 +259,17 @@
                     <div class="calendar">
                         <div class="date">
                             <label for="appointdate">DATE</label><br>
-                            <input type="text" name="appointdate" id="appointdate" class="datepicker" value="<?php echo @$_POST['appointdate']; ?>" onchange="check()" required>
+                            <input type="text" name="appointdate" id="appointdate" class="datepicker"
+                                value="<?php echo @$_POST['appointdate']; ?>" onchange="check()" required>
 
                         </div>
 
                         <div class="time">
                             <label for="appointtime">TIME</label><br>
                             <select name="appointtime" id="appointtime" required onchange="check()">
-                                <?php if (!isset($response) || empty($response)) : ?>
+                                <?php if (!isset($response) || empty($response)): ?>
                                     <option value="" hidden selected>Choose Appointment Time</option>
-                                <?php else : ?>
+                                <?php else: ?>
                                     <option value="<?php echo @$_POST['appointtime']; ?>" hidden selected>
                                         <?php echo @$_POST['appointtime']; ?>
                                     </option>
@@ -272,7 +292,8 @@
 
                     </div>
                     <div class="submit">
-                        <input type="submit" name="enroll" class="enroll" id="enroll" style="display: none;" value="ENROLL">
+                        <input type="submit" name="enroll" class="enroll" id="enroll" style="display: none;"
+                            value="ENROLL">
                     </div>
                 </form>
             </div>
@@ -344,7 +365,7 @@
                     appointTime: appointTime
                 },
 
-                success: function(response) {
+                success: function (response) {
                     console.log('Response from server:', response);
                     if (response === "true" || response === true) {
                         console.log('Appointment is available.');
@@ -360,7 +381,7 @@
                         document.getElementById("novalue").style.display = "none";
                     }
                 },
-                error: function(xhr, status, error) {
+                error: function (xhr, status, error) {
                     console.error('Error:', error);
                 }
             });
@@ -399,7 +420,7 @@
     echo "var holiday = [\n\t" . $getholidays . "\n];";
     ?>
 
-    $('.datepicker').datepicker({
+    $('.datepicker').datepicker  ({
         // Current date 
         minDate: new Date(yyyy, mm, dd + 1),
         beforeShowDay: function(date) {

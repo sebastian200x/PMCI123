@@ -7,11 +7,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CONTACT US</title>
-</head>
+    <?php include 'header.php'; ?>
+</head>     
 
 
 <body>
-<?php include 'header.php'; ?>
 
     <main>
         <div class="heading">
@@ -37,13 +37,13 @@
             <div class="card">
                 <h2>CONTACT US</h2>
                 <div class="data">
-                    <h3><i class="fa-solid fa-mobile"></i>  PHONE</h3>
+                    <h3><i class="fa-solid fa-mobile"></i> PHONE</h3>
                     <p>+63 9773466393</p>
 
-                    <h3><i class="fa-solid fa-phone"></i>  TELEPHONE</h3>
+                    <h3><i class="fa-solid fa-phone"></i> TELEPHONE</h3>
                     <p>84411619</p>
 
-                    <h3><i class="fa-solid fa-envelope"></i>  EMAIL</h3>
+                    <h3><i class="fa-solid fa-envelope"></i> EMAIL</h3>
                     <p>philmalcultural58@gmail.com</p>
 
                 </div>
@@ -53,13 +53,23 @@
                 <H2>SOCIALS</H2>
 
                 <div class="data">
-                <a href="https://www.facebook.com/PMCI1958" target="_blank"><h3><i class="fa-brands fa-facebook"></i> FACEBOOK</h3></a>
-                <a href="https://www.instagram.com/pmci_ig58/"target="_blank"><h3><i class="fa-brands fa-instagram"></i>  INSTAGRAM</h3></a>
-                <a href="https://www.facebook.com/PMCI1958" target="_blank"><H3><i class="fa-brands fa-facebook-messenger"></i>  MESSENGER</H3></a>
-                <a href="https://www.tiktok.com/@pmci_tiktok58" target="_blank"><h3><i class="fa-brands fa-tiktok"></i> TIKTOK</h3></a>
-                <a href="https://www.youtube.com/@pmci_ytc58" target="_blank"><h3><i class="fa-brands fa-youtube"></i></i> YOUTUBE</h3></a>
+                    <a href="https://www.facebook.com/PMCI1958" target="_blank">
+                        <h3><i class="fa-brands fa-facebook"></i> FACEBOOK</h3>
+                    </a>
+                    <a href="https://www.instagram.com/pmci_ig58/" target="_blank">
+                        <h3><i class="fa-brands fa-instagram"></i> INSTAGRAM</h3>
+                    </a>
+                    <a href="https://www.facebook.com/PMCI1958" target="_blank">
+                        <H3><i class="fa-brands fa-facebook-messenger"></i> MESSENGER</H3>
+                    </a>
+                    <a href="https://www.tiktok.com/@pmci_tiktok58" target="_blank">
+                        <h3><i class="fa-brands fa-tiktok"></i> TIKTOK</h3>
+                    </a>
+                    <a href="https://www.youtube.com/@pmci_ytc58" target="_blank">
+                        <h3><i class="fa-brands fa-youtube"></i></i> YOUTUBE</h3>
+                    </a>
 
-                    
+
 
                 </div>
             </div>

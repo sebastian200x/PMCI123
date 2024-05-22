@@ -58,14 +58,15 @@
             </div>
         </div>
         <div class="display">
-            <?php
-            // Get the current page from the URL, default to 1 if not set
-            $current_page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
-            // Call the news function with pagination
-            $news_data = getnews($current_page);
-            ?>
+
             <div class="container">
-                <div class="pagination">
+                <div class="pagination"> 
+                    <?php
+                // Get the current page from the URL, default to 1 if not set
+                $current_page = isset($_GET['page']) ? (int) $_GET['page'] : 1;
+                // Call the news function with pagination
+                $news_data = getnews($current_page);
+                ?>
                     <?php
                     // Calculate the start and end page numbers to always show 3 pages
                     $total_pages = $news_data['total_pages'];

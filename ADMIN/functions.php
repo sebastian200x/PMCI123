@@ -405,7 +405,7 @@ function getnews($current_page = 1, $items_per_page = 3)
 	$total_pages = ceil($total_items / $items_per_page);
 
 	// Fetch the news items for the current page
-	$query = "SELECT * FROM news LIMIT $items_per_page OFFSET $offset";
+	$query = "SELECT * FROM news ORDER BY reg_date DESC LIMIT $items_per_page OFFSET $offset";
 	$result = $mysqli->query($query);
 	$news = '';
 
@@ -957,7 +957,7 @@ function delholiday($id)
 	}
 
 	// Prepare and execute SQL statements to update each holiday record
-	$stmt = $mysqli->prepare("DELETE FROM holiday WHERE `holiday`.`id` = ?");
+	$stmt = $mysqli->prepare("DELETE FROM holiday WHERE id = ?");
 	$stmt->bind_param("i", $id);
 	$stmt->execute();
 

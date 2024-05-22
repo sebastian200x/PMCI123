@@ -276,72 +276,77 @@
 
  @media screen and (max-width: 1024px) {
 
-    .form-container {
+     .form-container {
 
-        margin-inline: 17px;
+         margin-inline: 17px;
      }
  }
 
  @media screen and (max-width: 450px) {
 
-    .row-custom {
-    display: block ;
-    }
-     .column-custom  {
+     .row-custom {
+         display: block;
+     }
 
-        width: 100%;
+     .column-custom {
+
+         width: 100%;
      }
 
      .form-container {
 
-        margin-inline: 14px;
+         margin-inline: 14px;
      }
 
      .check {
 
-        width: 100%;
+         width: 100%;
 
-        
+
      }
 
      .check label {
 
-        padding: 8px 5px;
-        font-size: 12px;
+         padding: 8px 5px;
+         font-size: 12px;
      }
 
-     
 
-     .full label, .col label, .label-custom {
 
-        font-weight: bold;
-        font-size: 12px;
+     .full label,
+     .col label,
+     .label-custom {
+
+         font-weight: bold;
+         font-size: 12px;
      }
 
-     .half .col input, select {
+     .half .col input,
+     select {
 
-        width: 100%;
+         width: 100%;
      }
 
      .half .row {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin-bottom: 10px;
-    }
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+         margin-bottom: 10px;
+     }
 
-    .title {
+     .title {
 
-        font-size: 30px;
+         font-size: 30px;
 
-        margin-inline: 20px;
-    }
+         margin-inline: 20px;
+     }
 
-    .date label, .time label {
+     .date label,
+     .time label {
 
-        font-size: 12px;
-    }
+         font-size: 12px;
+     }
 
-   
+
 
  }

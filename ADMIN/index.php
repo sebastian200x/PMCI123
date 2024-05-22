@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./styles/index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./styles/favicon.ico" type="image/x-icon">
 
     <title>LOGIN</title>
 </head>
@@ -17,19 +18,19 @@
 
         <div class="form">
             <h5><a class="back" href="../index.php">
-                < Home</a>
+                    < Home</a>
             </h5>
             <H1>PMCI LOGIN</H1>
 
             <?php
             require "functions.php";
 
-            if (isset ($_SESSION['admin'])) {
+            if (isset($_SESSION['admin'])) {
                 header('Location: ./home.php');
                 exit();
             }
-            
-            if (isset ($_POST['login'])) {
+
+            if (isset($_POST['login'])) {
                 $response = login($_POST['username'], $_POST['password']);
                 if (@$response == false) { ?>
                     <p class="error">
